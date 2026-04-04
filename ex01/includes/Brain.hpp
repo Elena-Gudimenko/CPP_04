@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elvictor <elvictor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/30 23:38:28 by elvictor          #+#    #+#             */
-/*   Updated: 2026/03/30 23:38:28 by elvictor         ###   ########.fr       */
+/*   Created: 2026/03/31 12:55:20 by elvictor          #+#    #+#             */
+/*   Updated: 2026/03/31 12:55:20 by elvictor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-#include "Animal.hpp"
+# include <iostream>
+# include <string>
 
-class Dog : public Animal {
+class Brain
+{
+private:
+    std::string ideas[100];
+    int         ideaIndex;
+
 public:
-	void makeSound() const;
-	Dog();
-	Dog(const Dog&);
-	Dog& operator= (const Dog&);
-	~Dog();
+    Brain();
+    Brain(const Brain& src);
+    Brain& operator=(const Brain& src);
+    ~Brain();
+
+    void        addIdea(std::string idea);
+    std::string getIdea(int index) const;
+    int         getIdeaIndex() const;
+    void        setIdeaIndex(int index);
 };
 
 #endif
