@@ -1,4 +1,4 @@
-NAME = animal
+NAME = brain
 
 RED = \033[0;31m
 GREEN = \033[0;32m
@@ -14,8 +14,7 @@ SRC =	$(addprefix $(SRC_DIR), main.cpp \
 								Animal.cpp \
 								Cat.cpp \
 								Dog.cpp \
-								WrongAnimal.cpp \
-								WrongCat.cpp)
+								Brain.cpp)
 OBJS = $(SRC:$(SRC_DIR)%.cpp=$(OBJ_DIR)%.o)
 
 all: $(NAME)

@@ -12,43 +12,29 @@
 
 #include "Animal.hpp"
 
-
-void Animal::makeSound(void) const
-{
-	std::cout << "Animal sound!" << std::endl;
+Animal::Animal(void) : _type("Animal") {
+	std::cout << "An animal has been created." << std::endl;
 }
 
-std::string Animal::getType(void) const
-{
-	return (type);
+Animal::Animal(const Animal& other) : _type(other._type) {
+	std::cout << "An animal has been cloned." << std::endl;
 }
 
-void Animal::setType(std::string value)
-{
-	type = value;
+Animal::~Animal(void) {
+	std::cout << "An animal has been destroyed." << std::endl;
 }
 
-Animal::Animal()
-{
-	std::cout << "Default Animal Constructor" << std::endl;
+Animal&	Animal::operator=(const Animal& other) {
+	std::cout << "An animal has been assigned values from another animal." << std::endl;
+	if (this != &other)
+		_type = other._type;
+	return *this;
 }
 
-Animal::Animal(const Animal& animal)
-{
-	std::cout << "Animal Copy Constructor" << std::endl;
-	setType(animal.getType());
+void	Animal::makeSound(void) const {
+	std::cout << _type << ": Sound of animal" << std::endl;
 }
 
-Animal& Animal::operator= (const Animal& animal)
-{
-	std::cout << "Animal Copy Assignment Operator" << std::endl;
-	if (this == &animal)
-		return (*this);
-	setType(animal.getType());
-	return (*this);
-}
-
-Animal::~Animal()
-{
-	std::cout << "Animal Destructor" << std::endl;
+std::string	Animal::getType(void) const {
+	return _type;
 }

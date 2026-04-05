@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elvictor <elvictor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/04 22:04:48 by elvictor          #+#    #+#             */
-/*   Updated: 2026/04/04 22:04:48 by elvictor         ###   ########.fr       */
+/*   Created: 2026/04/04 23:22:17 by elvictor          #+#    #+#             */
+/*   Updated: 2026/04/04 23:22:17 by elvictor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BRAIN_HPP
-# define BRAIN_HPP
+#define BRAIN_HPP
 
 #include <iostream>
-#include <string>
 
-class Brain
-{
-private:
-    std::string ideas[100];
-    int         ideaIndex;
+class Brain {
+	protected:
+		std::string	_ideas[100];
 
-public:
-    Brain();
-    Brain(const Brain& src);
-    Brain& operator=(const Brain& src);
-    ~Brain();
-
-    void        addIdea(std::string idea);
-    std::string getIdea(int index) const;
-    int         getIdeaIndex() const;
-    void        setIdeaIndex(int index);
+	public:
+		Brain(void);
+		Brain(const Brain& other);
+        Brain&	operator=(const Brain& other);
+		~Brain(void);
+		
+		std::string	getIdea(int index) const;
+		void		setIdea(int index, const std::string idea);
 };
 
 #endif
