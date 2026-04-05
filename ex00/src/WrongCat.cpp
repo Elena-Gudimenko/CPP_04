@@ -11,34 +11,27 @@
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
-
-void WrongCat::makeSound() const
-{
-	std::cout << "Wrong Meow" << std::endl;
+WrongCat::WrongCat(void) : WrongAnimal() {
+	std::cout << "A wrong cat has been created." << std::endl;
+	_type = "Wrong cat";
 }
 
-WrongCat::WrongCat()
-{
-	std::cout << "Default WrongCat Constructor" << std::endl;
-	type = "WrongCat";
+WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other) {
+	std::cout << "A wrong cat has been cloned." << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat& cat) : WrongAnimal(cat)
-{
-	std::cout << "WrongCat Copy Constructor" << std::endl;
-	setType(cat.getType());
+WrongCat::~WrongCat(void) {
+	std::cout << "A wrong cat has been destroyed." << std::endl;
 }
 
-WrongCat& WrongCat::operator= (const WrongCat& cat)
-{
-	std::cout << "WrongCat Copy Assignment Operator" << std::endl;
-	if (this == &cat)
-		return (*this);
-	setType(cat.getType());
-	return (*this);
+WrongCat&	WrongCat::operator=(const WrongCat& other) {
+	std::cout << "A wrong cat has been assigned values from another wrong cat." << std::endl;
+	if (this != &other) {
+		_type = other._type;
+	}
+	return *this;
 }
 
-WrongCat::~WrongCat()
-{
-	std::cout << "WrongCat Destructor" << std::endl;
+void	WrongCat::makeSound(void) const {
+	std::cout << _type << ": Wrong Meooooooow!" << std::endl;
 }

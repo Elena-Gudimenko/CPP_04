@@ -16,20 +16,18 @@
 # include <iostream>
 # include <string>
 
-class WrongAnimal
-{
-protected:
-	std::string type;
-public:
-	WrongAnimal();
-	WrongAnimal(const WrongAnimal&);
-	WrongAnimal& operator= (const WrongAnimal&);
-    ~WrongAnimal();
-	std::string getType() const;
-	void setType(std::string);
-	void makeSound() const;
+class WrongAnimal {
+	protected:
+		std::string		_type;
+
+	public:
+		WrongAnimal(void);
+		WrongAnimal(const WrongAnimal& other);
+		WrongAnimal& operator=(const WrongAnimal& other);
+		virtual ~WrongAnimal(void);
+
+		void		makeSound(void) const;
+		std::string	getType(void) const;
 };
-
-
 
 #endif

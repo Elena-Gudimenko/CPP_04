@@ -17,11 +17,12 @@
 
 class Cat : public Animal {
 public:
-	void makeSound() const;
-	Cat();
-	Cat(const Cat&);
-	Cat& operator= (const Cat&);
-	~Cat();
+	Cat(void);
+	Cat(const Cat& other);
+	Cat& operator=(const Cat& other);
+	~Cat(void);
+
+	void	makeSound(void) const;
 };
 
 #endif

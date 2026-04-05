@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elvictor <elvictor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/31 12:55:20 by elvictor          #+#    #+#             */
-/*   Updated: 2026/03/31 12:55:20 by elvictor         ###   ########.fr       */
+/*   Created: 2026/04/04 22:04:48 by elvictor          #+#    #+#             */
+/*   Updated: 2026/04/04 22:04:48 by elvictor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BRAIN_HPP
 # define BRAIN_HPP
 
-# include <iostream>
-# include <string>
+#include <iostream>
+#include <string>
 
 class Brain
 {

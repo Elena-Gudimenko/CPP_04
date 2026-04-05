@@ -12,42 +12,30 @@
 
 #include "WrongAnimal.hpp"
 
-void WrongAnimal::makeSound(void) const
-{
-	std::cout << "WrongAnimal sound!" << std::endl;
+WrongAnimal::WrongAnimal(void) : _type("Wrong animal") {
+	std::cout << "A wrong animal has been created." << std::endl;
 }
 
-std::string WrongAnimal::getType(void) const
-{
-	return (type);
+WrongAnimal::WrongAnimal(const WrongAnimal& other) : _type(other._type) {
+	std::cout << "A wrong animal has been cloned." << std::endl;
 }
 
-void WrongAnimal::setType(std::string value)
-{
-	type = value;
+WrongAnimal::~WrongAnimal(void) {
+	std::cout << "A wrong animal has been destroyed." << std::endl;
 }
 
-WrongAnimal::WrongAnimal()
-{
-	std::cout << "Default WrongAnimal Constructor" << std::endl;
+WrongAnimal&	WrongAnimal::operator=(const WrongAnimal& other) {
+	std::cout << "A wrong animal has been assigned values from another wrong animal." << std::endl;
+	if (this != &other) {
+		_type = other._type;
+	}
+	return *this;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal& animal)
-{
-	std::cout << "WrongAnimal Copy Constructor" << std::endl;
-	setType(animal.getType());
+void	WrongAnimal::makeSound(void) const {
+	std::cout << _type << ": wrong sound animal" << std::endl;
 }
 
-WrongAnimal& WrongAnimal::operator= (const WrongAnimal& animal)
-{
-	std::cout << "WrongAnimal Copy Assignment Operator" << std::endl;
-	if (this == &animal)
-		return (*this);
-	setType(animal.getType());
-	return (*this);
-}
-
-WrongAnimal::~WrongAnimal()
-{
-	std::cout << "WrongAnimal Destructor" << std::endl;
+std::string	WrongAnimal::getType(void) const {
+	return _type;
 }

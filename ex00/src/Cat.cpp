@@ -12,33 +12,27 @@
 
 #include "Cat.hpp"
 
-void Cat::makeSound() const
-{
-	std::cout << "Cats don’t bark! ....Meeeooow" << std::endl;
+Cat::Cat(void) : Animal() {
+	std::cout << "A cat has been created." << std::endl;
+	_type = "Cat";
 }
 
-Cat::Cat()
-{
-	std::cout << "Default Cat Constructor" << std::endl;
-	type = "Cat";
+Cat::Cat(const Cat& other) : Animal(other) {
+	std::cout << "A cat has been cloned." << std::endl;
 }
 
-Cat::Cat(const Cat& cat) : Animal(cat)
-{
-	std::cout << "Cat Copy Constructor" << std::endl;
-	setType(cat.getType());
+Cat::~Cat(void) {
+	std::cout << "A cat has been destroyed." << std::endl;
 }
 
-Cat& Cat::operator= (const Cat& cat)
-{
-	std::cout << "Cat Copy Assignment Operator" << std::endl;
-	if (this == &cat)
-		return (*this);
-	setType(cat.getType());
-	return (*this);
+Cat&	Cat::operator=(const Cat& other) {
+	std::cout << "A cat has been assigned values from another cat." << std::endl;
+	if (this != &other) {
+		_type = other._type;
+	}
+	return *this;
 }
 
-Cat::~Cat()
-{
-	std::cout << "Cat Destructor" << std::endl;
+void	Cat::makeSound(void) const {
+	std::cout << _type << ": Meooooooow!" << std::endl;
 }

@@ -17,17 +17,17 @@
 # include <string>
 
 class Animal {
-protected:
-    std::string type;
-
-public:
-    std::string getType() const;
-    void setType(std::string);
-    virtual void makeSound() const;
-    Animal();
-    Animal(const Animal&);
-    Animal& operator=(const Animal&);
-    virtual ~Animal();
+	protected:
+		std::string		_type;
+		
+	public:
+		Animal(void);
+		Animal(const Animal& other);
+        Animal&	operator=(const Animal& other);
+		virtual ~Animal(void);
+		
+		virtual void	makeSound(void) const;
+		std::string		getType(void) const;
 };
 
 #endif

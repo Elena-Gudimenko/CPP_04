@@ -15,14 +15,14 @@
 
 #include "WrongAnimal.hpp"
 
-class WrongCat : public WrongAnimal
-{
+class WrongCat : public WrongAnimal {
 public:
-	void makeSound() const;
-	WrongCat();
-	WrongCat(const WrongCat&);
-	WrongCat& operator= (const WrongCat&);
-	~WrongCat();
+	WrongCat(void);
+	WrongCat(const WrongCat& other);
+	WrongCat& operator=(const WrongCat& other);
+	~WrongCat(void);
+
+	void makeSound(void) const;
 };
 
 

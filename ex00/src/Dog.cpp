@@ -12,33 +12,27 @@
 
 #include "Dog.hpp"
 
-void Dog::makeSound() const
-{
-	std::cout << "Woof-Woof-Woof" << std::endl;
+Dog::Dog(void) : Animal() {
+	std::cout << "A dog has been created." << std::endl;
+	_type = "Dog";
 }
 
-Dog::Dog()
-{
-	std::cout << "Default Dog Constructor" << std::endl;
-	type = "Dog";
+Dog::Dog(const Dog& other) : Animal(other) {
+	std::cout << "A dog has been cloned." << std::endl;
 }
 
-Dog::Dog(const Dog& dog) : Animal(dog)
-{
-	std::cout << "Dog Copy Constructor" << std::endl;
-	setType(dog.getType());
+Dog::~Dog(void) {
+	std::cout << "A dog has been destroyed." << std::endl;
 }
 
-Dog& Dog::operator= (const Dog& dog)
-{
-	std::cout << "Dog Copy Assignment Operator" << std::endl;
-	if (this == &dog)
-		return (*this);
-	setType(dog.getType());
-	return (*this);
+Dog&	Dog::operator=(const Dog& other) {
+	std::cout << "A dog has been assigned values from another dog." << std::endl;
+	if (this != &other) {
+		_type = other._type;
+	}
+	return *this;
 }
 
-Dog::~Dog()
-{
-	std::cout << "Dog Destructor" << std::endl;
+void	Dog::makeSound(void) const {
+	std::cout << _type << ": Woof! Woof!" << std::endl;
 }
